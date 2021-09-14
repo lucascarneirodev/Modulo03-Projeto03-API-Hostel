@@ -1,0 +1,29 @@
+{
+  "name": "api-hostel",
+  "version": "1.0.0",
+  "description": "Api de gestão de hostels e hotéis",
+  "main": "index.js",
+  "scripts": {
+    "start":"node main",
+    "dev":"nodemon main"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucascarneiro-dev/Modulo03-Projeto03-API-Hostel.git"
+  },
+  "author": "Lucas Carneiro",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lucascarneiro-dev/Modulo03-Projeto03-API-Hostel/issues"
+  },
+  "homepage": "https://github.com/lucascarneiro-dev/Modulo03-Projeto03-API-Hostel#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-async-errors": "^3.1.1",
+    "mongodb": "^4.1.1"
+  }
+}
