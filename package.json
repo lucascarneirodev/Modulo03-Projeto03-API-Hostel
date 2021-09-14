@@ -4,7 +4,8 @@
   "description": "Api de gestão de hostels e hotéis",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start":"node main",
+    "dev":"nodemon main"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,11 @@
   "homepage": "https://github.com/lucascarneiro-dev/Modulo03-Projeto03-API-Hostel#readme",
   "devDependencies": {
     "nodemon": "^2.0.12"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-async-errors": "^3.1.1",
+    "mongodb": "^4.1.1"
   }
 }
