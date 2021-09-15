@@ -11,13 +11,8 @@ const db = client.db(process.env.DB_NAME);
 const rooms = db.collection("rooms");
 
 async function connect() {
-    try{
-  await client.connect(() => {
-    console.log("Connection established");
-  })} catch(err) {
-      await client.connect(() => {
-        console.log("Connection forcelly established");
-    })};
+  await client.connect();
+  console.log("Connection established");
 };
 
 async function dbclose() {
