@@ -1,7 +1,7 @@
 {
   "name": "api-hostel",
   "version": "1.0.0",
-  "description": "Api de gestão de hostels e hotéis",
+  "description": "Api de gestão de hostels",
   "main": "server.js",
   "scripts": {
     "start": "node main",

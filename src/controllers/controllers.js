@@ -90,32 +90,29 @@ exports.editRoom = async (req, res) => {
 
 exports.searchRooms = async (req, res) => {
   var { name, category, private, vacancy, ammenities } = req.query;
-  if (name === undefined) name = "";
-  if (category === undefined) category = "";
-  if (private === undefined) private = "";
-  if (vacancy === undefined) vacancy = "";
-  if (ammenities === undefined) ammenities = "";
+  !name ? name = "" : name = name;
+  !category ? category = "" : category=category;
+  !private ? private = "": private=private;
+  !vacancy ? vacancy = "" : vacancy=vacancy;
+  !ammenities ? ammenities = "" : ammenities=ammenities;
 
   try {
     await connect();
-    const room = rooms.find({
-      name: { $regex: name, $options: "i" },
-      category: { $regex: category, $options: "i" },
-      private: { $regex: private, $options: "i" },
-      vacancy: { $regex: vacancy, $options: "i" },
-      ammenities: { $regex: ammenities, $options: "i" },
+    const roomSearch = rooms.find({
+      name: { $regex: `${name}`, $options: "i" },
+      category: { $regex: `${category}`, $options: "i" },
+      private: { $regex: `${private}`, $options: "i" },
+      vacancy: { $regex: `${vacancy}`, $options: "i" },
+      ammenities: { $regex: `${ammenities}`, $options: "i" },
     });
-
-    const roomArray = await room.toArray();
-
+    let roomArray = await roomSearch.toArray();
+    dbclose();
+    
     if (roomArray.length === 0) {
-      await dbclose();
       return res.status(404).send({ erro: "Room not found" });
     }
-    await dbclose();
-    return res.status(200).json(room);
+    return res.status(200).json(roomArray);
   } catch (err) {
-    await dbclose();
     return res.status(500).send({ error: err.message });
   }
 };
