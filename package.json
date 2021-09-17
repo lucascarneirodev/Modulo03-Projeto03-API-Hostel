@@ -2,6 +2,10 @@
   "name": "api-hostel",
   "version": "1.0.0",
   "description": "Api de gestão de hostels",
+  "engines":{
+    "node":"14.x",
+    "npm":"7.22.x"
+  },
   "main": "server.js",
   "scripts": {
     "start": "node main",
